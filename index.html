@@ -14,7 +14,7 @@
         <br>
         <input class="form-control" placeholder="Name">
         <br>
-        <button class="btn btn-success">Send</button>
+        <button id="send" class="btn btn-success">Send</button>
     </div>
 
     <div id="messages">
@@ -23,12 +23,15 @@
 </div>
 
 <script>
-    //document ready event
+    //document ready event shothand
     $(() => {
-        addMessages({name: 'Tim', message:'Hola'})
+        $('#send').click(()=> {
+            addMessages({name: 'Tim', message:'Hola'})
+        }) 
+        
     })
 
     function addMessages(message){
-        $("#messages").append(message.message+'<br>'+'<b>'+message.name+'</b>')
+        $("#messages").append(message.message+'<br>'+'<b>'+message.name+'</b><br>')
     }
 </script>
